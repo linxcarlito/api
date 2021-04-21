@@ -23,6 +23,9 @@ app.use(express.json());
 
 app.use(morgan('dev'));
 
+const distDir = __dirname + "/dist/";
+ app.use(express.static(distDir));
+
 app.use('/api/paquetes', paquetesRoutes);
 app.use('/api/remitente', remitenteRoutes);
 app.use('/api/factura', facturaRoutes);
